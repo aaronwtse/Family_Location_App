@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart' ;
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -8,6 +10,39 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  var userProfile;
+  var profilePic;
+  var username;
+  var location;
+  var description;
+
+  @override
+  void initState() {
+    FirebaseAuth.instance.authStateChanges().listen((user) {
+      if (user == null) {
+        print('User is currently signed out!');
+      } else {
+        var uid = user.uid;
+        FirebaseDatabase.instance.reference().child("users/" + uid).onValue.listen((event){
+          print(event.snapshot.value);
+          userProfile = event.snapshot.value;
+          setState(() {
+            username = userProfile["username"];
+            profilePic = userProfile["profilePic"];
+            location = userProfile["location"];
+            description = userProfile["description"];
+          });
+        }).onError((error) {
+          print("Failed to retrieve user's information");
+        }
+        );
+      }
+    });
+
+    super.initState();
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,9 +126,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ),
                     const SizedBox(height: 16,),
-                    listProfile(Icons.person, "Full Name", "Placeholder"),
+                    listProfile(Icons.person, "Username", username),
                     listProfile(Icons.date_range, "Date of Birth", "Placeholder"),
-                    listProfile(Icons.location_pin, "Location", "Placeholder, Placeholder"),
+                    listProfile(Icons.location_pin, "Location", location),
                     listProfile(Icons.male, "Gender", "Placeholder"),
                     listProfile(Icons.phone, "Phone Number", "Placeholder"),
                   ],
