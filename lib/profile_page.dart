@@ -79,7 +79,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ),
                   const Text(
-                    "Kyle",
+                    "Aaron",
                     style: TextStyle(
                       fontFamily: "Montserrat",
                       color: Colors.black87,
