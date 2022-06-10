@@ -1,0 +1,47 @@
+name: aaron_inspiring_quotes
+description: Random Inspiring Quote Every Day
+
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.16.2 <3.0.0"
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+  font_awesome_flutter: ^9.1.0
+  firebase_core: ^1.14.0
+  firebase_analytics: ^8.3.2
+  firebase_auth: ^3.3.12
+  firebase_database: ^8.2.0
+  firebase_storage: ^10.0.6
+  cloud_firestore: ^2.5.3
+  #path_provider: ^2.0.5
+  #path: ^1.8.0
+  shared_preferences: ^2.0.8
+  provider: ^6.0.1
+
+
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^1.0.0
+
+
+flutter:
+
+
+  uses-material-design: true
+
+fonts:
+  - family: Montserrat
+    fonts:
+      - asset: assets/fonts/Montserrat-Black.ttf
