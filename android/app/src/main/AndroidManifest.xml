@@ -4,6 +4,11 @@
         android:label="aaron_inspiring_quotes"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+
+       //api key
+       <meta-data android:name="com.google.android.geo.API_KEY"
+           android:value="AIzaSyDqs5mT8eV9iDAhQaJEmmm-LLRzpiwljRQ"/>
+
         <activity
             android:name=".MainActivity"
             android:exported="true"

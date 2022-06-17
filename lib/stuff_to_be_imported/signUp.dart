@@ -25,7 +25,7 @@ class SignUpPage extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.only(bottom: 10),
                   child: Text (
-                    "Sign Up",
+                    "Hello!",
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
