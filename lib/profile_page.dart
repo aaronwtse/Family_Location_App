@@ -1,3 +1,4 @@
+import 'package:aaron_inspiring_quotes/next_page.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart' ;
@@ -96,6 +97,22 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ),
                 ],
+              ),
+            ),
+            Container(
+              child: new GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MySecondPage(title: 'Maps',)),
+                  );
+                },
+                child: new Text(
+                  "Go To Maps",
+                  style: TextStyle(
+                    color: Colors.red,
+                  ),
+                ),
               ),
             ),
             Expanded(
