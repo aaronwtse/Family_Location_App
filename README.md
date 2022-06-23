@@ -1,6 +1,6 @@
 # aaron_inspiring_quotes
 
-Random Inspiring Quote Every Day
+Allows for family members to see the location of each other, which gives a plethora of benefits. 
 
 ## Getting Started
 
