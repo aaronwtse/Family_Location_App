@@ -64,13 +64,13 @@ class _ProfilePageState extends State<ProfilePage> {
                        Text(
                            '${friendList[index]}'
                        ),
-                       //Text(
-                         //'999-999-3345'
-                       //)
+                       Text(
+                         'k'
+                       )
                      ]
                    ),
                    Spacer(),
-                   //Text('MOBILE')
+                   Text('MOBILE')
 
                  ],
                ),
