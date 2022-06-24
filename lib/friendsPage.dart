@@ -1,4 +1,5 @@
 import 'package:aaron_inspiring_quotes/add_friend.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -10,14 +11,38 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
 
-  final List<String> entries = <String>['Aaron', 'Mr. Tran', 'Dr. Sun'];
-  final List<int> colorCodes = <int>[600, 500, 100];
+  // final List<String> entries = <String>['Aaron', 'Mr. Tran', 'Dr. Sun'];
+  // final List<int> colorCodes = <int>[600, 500, 100];
+
+  var friendList = [];
+
+  _ProfilePageState() {
+    //load all the friends from firebase and display por favor
+    FirebaseDatabase.instance.reference().child("friends").once()
+        .then((datasnapshot) {
+          print("The data has been loaded and aaron is happy");
+          print(datasnapshot);
+          var friendTmpList = [];
+          datasnapshot.value.forEach((k,v){
+            print(k);
+            print(v);
+            friendTmpList.add(v);
+          });
+          friendList = friendTmpList;
+          setState((){
+
+          });
+    }).catchError((error) {
+          print("Aaron is not happy");
+          print(error);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
    return Scaffold(
-     body: ListView.builder(
-       itemCount: entries.length,
+     body: ListView.builder( //might display list too long
+       itemCount: friendList.length,
          itemBuilder: (BuildContext context, int index) {
            return Container(
                height: 50,
@@ -37,15 +62,15 @@ class _ProfilePageState extends State<ProfilePage> {
                      //left off on video 7:00 #20
                      children: [
                        Text(
-                           '${entries[index]}'
+                           '${friendList[index]}'
                        ),
-                       Text(
-                         '999-999-3345'
-                       )
+                       //Text(
+                         //'999-999-3345'
+                       //)
                      ]
                    ),
                    Spacer(),
-                   Text('MOBILE')
+                   //Text('MOBILE')
 
                  ],
                ),
