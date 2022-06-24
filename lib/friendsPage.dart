@@ -41,7 +41,7 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
    return Scaffold(
-     body: ListView.builder( //might display list too long
+     body: ListView.builder( //might display list too long, might keep idk
        itemCount: friendList.length,
          itemBuilder: (BuildContext context, int index) {
            return Container(
