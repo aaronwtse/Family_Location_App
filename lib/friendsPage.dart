@@ -1,3 +1,4 @@
+import 'package:aaron_inspiring_quotes/add_friend.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -48,9 +49,18 @@ class _ProfilePageState extends State<ProfilePage> {
 
                  ],
                ),
+
            );
          }
-     )
+     ),
+       floatingActionButton: FloatingActionButton(
+       onPressed: () {
+         Navigator.push(
+           context,
+           MaterialPageRoute(builder: (context) => AddFriendPage()),
+         );
+        }
+      ),
    );
   }
 }

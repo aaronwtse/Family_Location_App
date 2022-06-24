@@ -1,3 +1,4 @@
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 class AddFriendPage extends StatefulWidget {
   const AddFriendPage({Key? key}) : super(key: key);
@@ -15,6 +16,7 @@ class _AddFriendPageState extends State<AddFriendPage> {
     return Scaffold(
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextField(
             controller: nameController,
@@ -24,7 +26,6 @@ class _AddFriendPageState extends State<AddFriendPage> {
             labelText:'Name',
             )
             ),
-
             TextField(
                 controller: emailController,
                 obscureText: false,
@@ -33,7 +34,26 @@ class _AddFriendPageState extends State<AddFriendPage> {
                   labelText:'Email',
                 )
             ),
-            //left of video 25 @ 8:20
+            ElevatedButton(
+              child: Text("Add Friend"),
+              onPressed: () {
+                print(nameController.text);
+                print(emailController.text);
+
+                var timestamp = new DateTime.now().millisecondsSinceEpoch;
+                FirebaseDatabase.instance.reference().child("friends/person" + timestamp.toString()).set(
+                  {
+                    "name" : nameController.text,
+                    "email" : emailController.text,
+                  }
+                ).then((value) {
+                  print("Sucessfully added friend. ");
+                }).catchError((error) {
+                  print("Failed to add. " + error.toString());
+                });
+              },
+            )
+
           ],
         ),
       ),

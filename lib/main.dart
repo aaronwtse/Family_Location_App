@@ -1,5 +1,7 @@
 import 'dart:io'; //imports dart library
 
+import 'package:aaron_inspiring_quotes/add_friend.dart';
+import 'package:aaron_inspiring_quotes/friendsPage.dart';
 import 'package:aaron_inspiring_quotes/stuff_to_be_imported/login_page.dart';
 import 'package:flutter/material.dart'; //importing flutter widgets using material design
 import 'package:firebase_core/firebase_core.dart'; //enables connecting to multiple firebase apps
@@ -30,7 +32,10 @@ class MyApp extends StatelessWidget {
         ),
         primarySwatch: Colors.blue, //primaryswatch is a materialcolor. its different shades of a color a material app will use
       ),
-      home: LoginPage(), //sets starting screen
+      //home: LoginPage(),
+      //home: AddFriendPage(),
+      home: ProfilePage(),//this is the friends list one
+      // sets starting screen
     );
   }
 
