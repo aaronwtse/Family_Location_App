@@ -1,8 +1,8 @@
 //importing other programs to be used.
 import 'package:aaron_inspiring_quotes/profile_page.dart';
-import 'package:aaron_inspiring_quotes/stuff_to_be_imported//homeScreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
 import 'forgotPassword.dart';
 import 'signUp.dart';
 
@@ -23,9 +23,7 @@ class _LoginPageState extends State<LoginPage> {
           child: SingleChildScrollView (
             child: Column(
               children: <Widget> [
-                Container(
-                    child: Image.asset('assets/inspiring_pic_1.jpg',scale: 2)
-                ),
+                Image.asset('assets/assets/family.jpg',scale: 2),
                 Container(
                   margin: EdgeInsets.only(top: 20, bottom: 20),
                   child: Text(
@@ -62,7 +60,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 Container(
                   margin: EdgeInsets.only(top: 5),
-                  child: new GestureDetector(
+                  child: GestureDetector(
                     onTap: () {
                       Navigator.push(
                         context,

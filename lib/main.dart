@@ -32,9 +32,9 @@ class MyApp extends StatelessWidget {
         ),
         primarySwatch: Colors.blue, //primaryswatch is a materialcolor. its different shades of a color a material app will use
       ),
-      //home: LoginPage(),
+      home: LoginPage(),
       //home: AddFriendPage(),
-      home: ProfilePage(),//this is the friends list one
+      //home: ProfilePage(),//this is the friends list one
       // sets starting screen
     );
   }

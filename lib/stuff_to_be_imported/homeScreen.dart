@@ -62,7 +62,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
           padding: const EdgeInsets.all(8.0),
           child: CircleAvatar(
             backgroundImage: NetworkImage(
-                profilePic == null ? "https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2020/12/16/c61kpj1fxidgnwiqgz2h/faker-t1-main" : profilePic
+                profilePic == null ? "https://img.redbull.com/assets/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2020/12/16/c61kpj1fxidgnwiqgz2h/faker-t1-main" : profilePic
             ),
             //onPressed: () {},
           ),

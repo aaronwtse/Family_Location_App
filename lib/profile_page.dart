@@ -1,3 +1,4 @@
+import 'package:aaron_inspiring_quotes/friendsPage.dart';
 import 'package:aaron_inspiring_quotes/next_page.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -100,20 +101,41 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
             ),
             Container(
-              child: new GestureDetector(
+              child: GestureDetector(
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => MySecondPage(title: 'Maps',)),
+                    MaterialPageRoute(
+                        builder: (context) => ProfilePage()),
                   );
                 },
-                child: new Text(
-                  "Go To Maps",
+                child: Text(
+                  "Go To Friends",
                   style: TextStyle(
                     color: Colors.red,
                   ),
                 ),
               ),
+            ),
+            Container(
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MySecondPage(title: 'Friends',)),
+                  );
+                },
+                //margin: EdgeInsets.only(top: 10, bottom: 10),
+                child: Text(
+                  'Go To Maps',
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.red,
+                  ),
+                ),
+              )
+
             ),
             Expanded(
               flex: 5,

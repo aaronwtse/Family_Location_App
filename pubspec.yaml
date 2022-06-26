@@ -45,8 +45,9 @@ flutter:
   uses-material-design: true
 
 fonts:
-  - family: Montserrat
-    fonts:
-      - asset: assets/fonts/Montserrat-Black.ttf
-    assets:
-      - assets/locations.json
+  family: Montserrat
+  fonts:
+    - asset: assets/fonts/Montserrat-Black.ttf
+  assets:
+    - assets/locations.json
+    - assets/assets/family.jpg
