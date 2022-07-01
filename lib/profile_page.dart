@@ -1,3 +1,4 @@
+import 'package:aaron_inspiring_quotes/GPS_Stuff/second_main.dart';
 import 'package:aaron_inspiring_quotes/friendsPage.dart';
 import 'package:aaron_inspiring_quotes/next_page.dart';
 import 'package:flutter/material.dart';
@@ -135,6 +136,26 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ),
               )
+
+            ),
+            Container(
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => TestMapLocation()),
+                    );
+                  },
+                  //margin: EdgeInsets.only(top: 10, bottom: 10),
+                  child: Text(
+                    'Go To Location Settings',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.red,
+                    ),
+                  ),
+                )
 
             ),
             Expanded(

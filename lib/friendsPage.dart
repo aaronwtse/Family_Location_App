@@ -94,6 +94,8 @@ class _ProfilePageState extends State<ProfilePage> {
   var userProfile;
   final db = FirebaseDatabase.instance.reference();
 
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -143,7 +145,9 @@ class _ProfilePageState extends State<ProfilePage> {
           context,
           MaterialPageRoute(builder: (context) => AddFriendPage()),
         );
-      }
+
+      },
+          child: Icon(Icons.refresh),
     ),
     );
   }

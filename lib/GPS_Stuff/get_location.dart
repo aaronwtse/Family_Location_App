@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:location/location.dart';
@@ -37,6 +39,46 @@ class _GetLocationWidgetState extends State<GetLocationWidget> {
     }
   }
 
+
+  // final FirebaseAuth auth = FirebaseAuth.instance;
+  //
+  // void inputData() {
+  //   final User? user = auth.currentUser;
+  //   final uid = user?.uid;
+  //   // here you write the codes to input the data into firestore
+  //   //var uid = user?.uid;
+  //   FirebaseDatabase.instance.reference().child("users/" + FirebaseAuth.uid = user?.uid.user).set(
+  //       {
+  //         "latitude" : _location?.latitude,
+  //         "longitude" : _location?.longitude,
+  //
+  //       }
+  //   );
+  // }
+
+
+  void pushToFirebase() {
+    // FirebaseDatabase.instance.reference().child("users/person" + timestamp.toString()).set(
+    FirebaseDatabase.instance.reference().child("users/" + FirebaseAuth._firebaseauth.currentUser.toString()).set(
+        {
+          "latitude" : _location?.latitude,
+          "longitude" : _location?.longitude,
+
+        }
+    );
+  }
+
+  // void pushToFirebase() {
+  //   // FirebaseDatabase.instance.reference().child("users/person" + timestamp.toString()).set(
+  //   FirebaseDatabase.instance.reference().child("users/" + FirebaseAuth._firebaseauth.currentUser.toString()).set(
+  //       {
+  //         "latitude" : _location?.latitude,
+  //         "longitude" : _location?.longitude,
+  //
+  //       }
+  //   );
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -49,10 +91,11 @@ class _GetLocationWidgetState extends State<GetLocationWidget> {
                 'Location: ${_location?.latitude}, ${_location?.longitude}',
             style: Theme.of(context).textTheme.bodyText1,
           ),
+
           Row(
             children: <Widget>[
               ElevatedButton(
-                onPressed: _getLocation,
+                onPressed:()=>[_getLocation(), pushToFirebase()],
                 child: _loading
                     ? const CircularProgressIndicator(
                   color: Colors.white,
@@ -66,3 +109,5 @@ class _GetLocationWidgetState extends State<GetLocationWidget> {
     );
   }
 }
+
+

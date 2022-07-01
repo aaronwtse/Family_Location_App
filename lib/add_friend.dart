@@ -10,6 +10,8 @@ class AddFriendPage extends StatefulWidget {
 class _AddFriendPageState extends State<AddFriendPage> {
   var nameController = TextEditingController();
   var emailController = TextEditingController();
+  var latController = TextEditingController();
+  var longController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +36,22 @@ class _AddFriendPageState extends State<AddFriendPage> {
                   labelText:'Email',
                 )
             ),
+            // TextField(
+            //     controller: latController,
+            //     obscureText: false,
+            //     decoration: InputDecoration(
+            //       border: OutlineInputBorder(),
+            //       labelText:'Latitude',
+            //     )
+            // ),
+            // TextField(
+            //     controller: longController,
+            //     obscureText: false,
+            //     decoration: InputDecoration(
+            //       border: OutlineInputBorder(),
+            //       labelText:'Longitude',
+            //     )
+            // ),
             ElevatedButton(
               child: Text("Add Friend"),
               onPressed: () {
@@ -45,6 +63,8 @@ class _AddFriendPageState extends State<AddFriendPage> {
                   {
                     "name" : nameController.text,
                     "email" : emailController.text,
+                    // "latitude" : latController.text,
+                    // "longitude" : longController.text,
                   }
                 ).then((value) {
                   print("Sucessfully added friend. ");

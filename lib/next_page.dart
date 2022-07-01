@@ -12,7 +12,7 @@ class MySecondPage extends StatefulWidget {
 class _MySecondPageState extends State<MySecondPage> {
   late GoogleMapController mapController;
 
-  final LatLng _center = const LatLng(45.521563, -122.677433);
+  final LatLng _center = const LatLng(34.139729, -118.035347);
 
   void _onMapCreated(GoogleMapController controller) {
     mapController = controller;
@@ -23,7 +23,7 @@ class _MySecondPageState extends State<MySecondPage> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Please work please work please work'),
+          title: const Text('Friends Map'),
           backgroundColor: Colors.green[700],
         ),
         body: GoogleMap(

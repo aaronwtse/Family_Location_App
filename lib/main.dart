@@ -1,5 +1,7 @@
 import 'dart:io'; //imports dart library
 
+import 'package:aaron_inspiring_quotes/GPS_Stuff/get_location.dart';
+import 'package:aaron_inspiring_quotes/GPS_Stuff/second_main.dart';
 import 'package:aaron_inspiring_quotes/add_friend.dart';
 import 'package:aaron_inspiring_quotes/friendsPage.dart';
 import 'package:aaron_inspiring_quotes/stuff_to_be_imported/login_page.dart';
@@ -35,6 +37,7 @@ class MyApp extends StatelessWidget {
       home: LoginPage(),
       //home: AddFriendPage(),
       //home: ProfilePage(),//this is the friends list one
+      //home: TestMapLocation(),
       // sets starting screen
     );
   }
